@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Circle?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane prefHeight="720.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.vehiServePro.controller.dashboardFormController">
+   <children>
+      <!-- Sidebar -->
+      <AnchorPane layoutX="0.0" layoutY="0.0" prefHeight="720.0" prefWidth="200.0">
+         <children>
+            <ImageView fitHeight="720.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../assests/images/Frame25.png" />
+               </image>
+            </ImageView>
+
+            <!-- Sidebar Buttons -->
+            <Button layoutX="10.0" layoutY="100.0" mnemonicParsing="false" onAction="#gotoDashbord" prefHeight="60.0" prefWidth="180.0" stylesheets="@../style/DashboardButton.css" text="Dashboard">
+               <font><Font size="18.0" /></font>
+            </Button>
+
+            <Button layoutX="10.0" layoutY="180.0" mnemonicParsing="false" onAction="#gotoCustomerForm" prefHeight="60.0" prefWidth="180.0" stylesheets="@../style/DashboardButton.css" text="Customer">
+               <font><Font size="18.0" /></font>
+            </Button>
+
+            <Button layoutX="10.0" layoutY="260.0" mnemonicParsing="false" onAction="#gotoVehicleForm" prefHeight="60.0" prefWidth="180.0" stylesheets="@../style/DashboardButton.css" text="Vehicles">
+               <font><Font size="18.0" /></font>
+            </Button>
+
+            <Button layoutX="10.0" layoutY="340.0" mnemonicParsing="false" onAction="#gotoStockForm" prefHeight="60.0" prefWidth="180.0" stylesheets="@../style/DashboardButton.css" text="Stocks">
+               <font><Font size="18.0" /></font>
+            </Button>
+
+            <Button layoutX="10.0" layoutY="420.0" mnemonicParsing="false" onAction="#goReservation" prefHeight="60.0" prefWidth="180.0" stylesheets="@../style/DashboardButton.css" text="Reservation">
+               <font><Font size="18.0" /></font>
+            </Button>
+
+            <Button layoutX="10.0" layoutY="500.0" mnemonicParsing="false" onAction="#gotoServiceDetail" prefHeight="60.0" prefWidth="180.0" stylesheets="@../style/DashboardButton.css" text="Service">
+               <font><Font size="18.0" /></font>
+            </Button>
+
+            <Button layoutX="10.0" layoutY="580.0" mnemonicParsing="false" onAction="#gotoEmployeeForm" prefHeight="60.0" prefWidth="180.0" stylesheets="@../style/DashboardButton.css" text="Employee">
+               <font><Font size="18.0" /></font>
+            </Button>
+
+            <Button layoutX="40.0" layoutY="660.0" mnemonicParsing="false" onAction="#gotofirstPage" prefHeight="40.0" prefWidth="120.0" style="-fx-background-color: white;" styleClass="linear-button" stylesheets="@../style/LogoutButton.css" text="Log Out" textFill="#2c2929">
+               <font><Font name="System Bold" size="14.0" /></font>
+            </Button>
+         </children>
+      </AnchorPane>
+
+      <!-- Main Dashboard Area -->
+      <AnchorPane fx:id="dash" layoutX="220.0" layoutY="20.0" prefHeight="700.0" prefWidth="1060.0">
+         <children>
+            <Button alignment="CENTER_RIGHT" layoutX="30.0" layoutY="80.0" mnemonicParsing="false" onAction="#tableButtonAction" prefHeight="100.0" prefWidth="300.0" style="-fx-background-color: white; -fx-background-radius: 25; -fx-border-color: black; -fx-border-radius: 25; -fx-border-width: 3;" text="Calculator">
+               <font><Font name="System Bold" size="24.0" /></font>
+            </Button>
+
+            <Button alignment="CENTER_RIGHT" layoutX="360.0" layoutY="80.0" mnemonicParsing="false" onAction="#notepadbuttonAction" prefHeight="100.0" prefWidth="300.0" style="-fx-background-color: white; -fx-background-radius: 25; -fx-border-color: black; -fx-border-width: 3; -fx-border-radius: 25;" text="Notepad">
+               <font><Font name="System Bold" size="24.0" /></font>
+            </Button>
+
+            <ImageView fitHeight="60.0" fitWidth="60.0" layoutX="50.0" layoutY="90.0" pickOnBounds="true" preserveRatio="true">
+               <image><Image url="@../assests/icon/calculator.png" /></image>
+            </ImageView>
+
+            <ImageView fitHeight="60.0" fitWidth="60.0" layoutX="380.0" layoutY="90.0" pickOnBounds="true" preserveRatio="true">
+               <image><Image url="@../assests/icon/notepad.png" /></image>
+            </ImageView>
+
+            <TableView fx:id="tblResrvation" layoutX="50.0" layoutY="200.0" prefHeight="300.0" prefWidth="900.0" stylesheets="@../style/Tableview.css">
+               <columns>
+                  <TableColumn fx:id="colId" prefWidth="100.0" text="Re ID" />
+                  <TableColumn fx:id="colEmail" prefWidth="300.0" text="Email" />
+                  <TableColumn fx:id="colvehNum" prefWidth="150.0" text="Vehicle Num" />
+                  <TableColumn fx:id="colDate" prefWidth="150.0" text="Date" />
+                  <TableColumn fx:id="colTime" prefWidth="150.0" text="Time" />
+               </columns>
+            </TableView>
+         </children>
+      </AnchorPane>
+
+      <!-- Header Section -->
+      <AnchorPane layoutX="220.0" layoutY="0.0" prefHeight="60.0" prefWidth="1060.0" style="-fx-background-color: white;">
+         <children>
+            <Label fx:id="clock" alignment="CENTER" layoutX="360.0" layoutY="10.0" prefHeight="40.0" prefWidth="300.0" style="-fx-background-color: white; -fx-background-radius: 15; -fx-border-width: 2; -fx-border-radius: 15;">
+               <font><Font size="20.0" /></font>
+            </Label>
+
+            <Label layoutX="700.0" layoutY="15.0" text="Mr.HARSHAN">
+               <font><Font name="System Bold" size="14.0" /></font>
+            </Label>
+
+            <Text layoutX="700.0" layoutY="40.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Admin">
+               <font><Font size="14.0" /></font>
+            </Text>
+
+            <ImageView fitHeight="40.0" fitWidth="40.0" layoutX="600.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true">
+               <image><Image url="@../assests/icon/img_20.png" /></image>
+            </ImageView>
+
+            <ImageView fitHeight="40.0" fitWidth="40.0" layoutX="650.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true">
+               <image><Image url="@../assests/icon/img_21.png" /></image>
+            </ImageView>
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>
